@@ -115,8 +115,7 @@ $(document).ready(function () {
         if (state) {
           game.onOrOff = true;
           document.getElementsByClassName("score")[0].setAttribute("style", "color: #CC0000");
-        }
-        else {
+        } else {
           game.onOrOff = false;
           resetGame();
           document.getElementsByClassName("score")[0].setAttribute("style", "color: #610B21");
@@ -130,8 +129,7 @@ $(document).ready(function () {
         if (game.onOrOff && !game.strict) {
           document.getElementsByClassName('light-strict')[0].setAttribute("style", "background: #FF0040"); 
           game.strict = true;
-        }
-        else if (game.onOrOff && game.strict) {
+        } else if (game.onOrOff && game.strict) {
           document.getElementsByClassName('light-strict')[0].setAttribute("style", "background: #3B0B0B"); 
           game.strict = false;
         }  
@@ -142,8 +140,7 @@ $(document).ready(function () {
         if (game.onOrOff && game.genSeq.length === 0) {
           addToSeq();
           playGenSeq();
-        }
-        else if (game.onOrOff) {
+        } else if (game.onOrOff) {
           resetGame();
           for (var i = 0; i < game.savedTimer.length; i++) {
             clearTimeout(game.savedTimer[i]);
@@ -167,7 +164,7 @@ $(document).ready(function () {
 
     //Light up a pad, "pad": shape1-shape4, "padNum": 1-4, 
     function padLightOn(pad, padNum) {
-        console.log("inside padLightOn game.playerTurn: " + game.playerTurn);
+        //console.log("inside padLightOn game.playerTurn: " + game.playerTurn);
         if (game.onOrOff) {
           document.getElementsByClassName(pad)[0].style.opacity = "0.9";
           playGoodTone(padNum - 1);
@@ -188,8 +185,7 @@ $(document).ready(function () {
         game.score += 1;
         if (game.score < 10) {
           document.getElementById("myScore").value = "0" + game.score.toString();
-        }
-        else {
+        } else {
           document.getElementById("myScore").value = game.score.toString();
         } 
     }
@@ -204,8 +200,7 @@ $(document).ready(function () {
 
           if (padNum === game.genSeq[game.playerSeq.length - 1]) {
             playGoodTone(padNum - 1);
-          }
-          else {
+          } else {
             playErrTone();
             game.err = true;
           }
@@ -219,28 +214,26 @@ $(document).ready(function () {
             stopGoodTones();
             stopErrTone();
             if (game.err) {
-            if (game.strict) {
-              clearScore();
-              game.genSeq = [];
-              game.playerSeq = [];
-              game.err = false;
-              addToSeq();
-              playGenSeq(); 
-            }
-            else {  
-              game.playerSeq = [];
-              game.err = false;
-              playGenSeq();
-            }
-          }
-          else {
-            if (game.playerSeq.length === game.genSeq.length) {
-              game.playerSeq = [];
-              addToScore();  
-              addToSeq();
-              playGenSeq(); 
-            }    
-          } 
+                if (game.strict) {
+                  clearScore();
+                  game.genSeq = [];
+                  game.playerSeq = [];
+                  game.err = false;
+                  addToSeq();
+                  playGenSeq(); 
+                } else {  
+                    game.playerSeq = [];
+                    game.err = false;
+                    playGenSeq();
+                }
+            } else {
+                if (game.playerSeq.length === game.genSeq.length) {
+                  game.playerSeq = [];
+                  addToScore();  
+                  addToSeq();
+                  playGenSeq(); 
+                }    
+            } 
         } 
     });   
 });
