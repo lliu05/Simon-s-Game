@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    'use strict';
+    "use strict";
     //import switch from bootstrap  
     $("[name='my-checkbox']").bootstrapSwitch();
 
@@ -75,7 +75,7 @@ $(document).ready(function () {
     function playGenSeq() {
         game.playerTurn = false;
         var delay = 500;
-        for (var j = 0; j < game.genSeq.length; j++) {       
+        for (var j = 0; j < game.genSeq.length; j++) {
             if (game.onOrOff) {
                 var seqIndex = game.genSeq[j];
                 var padFlash = "shape" + seqIndex.toString();
@@ -141,14 +141,14 @@ $(document).ready(function () {
           addToSeq();
           playGenSeq();
         } else if (game.onOrOff) {
-          resetGame();
-          for (var i = 0; i < game.savedTimer.length; i++) {
-            clearTimeout(game.savedTimer[i]);
-          }
-          game.savedTimer = [];
-          document.getElementsByClassName("pad")[0].style.opacity = "0.5";
-          addToSeq();
-          playGenSeq();
+            resetGame();
+            for (var i = 0; i < game.savedTimer.length; i++) {
+                clearTimeout(game.savedTimer[i]);
+            }
+            game.savedTimer = [];
+            document.getElementsByClassName("pad")[0].style.opacity = "0.5";
+            addToSeq();
+            playGenSeq();
         } 
     });  
 
