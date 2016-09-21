@@ -195,7 +195,7 @@ $(document).ready(function () {
     console.log("inside mousedown game.playerTurn: " + game.playerTurn);
         if (game.onOrOff && game.playerTurn) {
           this.style.opacity = 0.9;
-          var padNum = parseInt(this.className.split(" ")[1][5]);
+          var padNum = parseInt(this.className.split(" ")[1][5], 10);
           game.playerSeq.push(padNum);
 
           if (padNum === game.genSeq[game.playerSeq.length - 1]) {
