@@ -86,19 +86,19 @@ $(document).ready(function () {
             } 
         }
         window.setTimeout(function () {game.playerTurn = true;}, delay - 500);
-    } ;
+    }
   
     //Add a random 1-4 number to game.genSeq
     function addToSeq() {
         var random = Math.floor((Math.random() * 4) + 1);
         game.genSeq.push(random);
-    } ;
+    }
 
     //Clear current score, reset it to "--"
     function clearScore() {
         game.score = 0;
         document.getElementById("myScore").value = "--";
-    } ;
+    }
 
     //Clear all stored data to initial state
     function resetGame() {
@@ -108,7 +108,7 @@ $(document).ready(function () {
         game.genSeq = [];
         game.playerSeq = [];
         game.err = false;
-    } ;
+    }
   
     //Switch events, turing socre light on/off, strict light off
     $('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
