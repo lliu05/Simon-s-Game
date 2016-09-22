@@ -1,5 +1,7 @@
 # Build a Simon Game
 
+[![Code Climate](https://codeclimate.com/github/lliu05/SimonsGame/badges/gpa.svg)](https://codeclimate.com/github/lliu05/SimonsGame)
+
 User Story: I am presented with a random series of button presses.
 
 User Story: Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.
