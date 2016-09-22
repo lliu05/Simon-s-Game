@@ -56,6 +56,15 @@ $(document).ready(function () {
         });
     }
 
+    //Display Score
+    function displayScore() {
+        if (game.score < 10) {
+            document.getElementById("myScore").value = "0" + game.score.toString();
+        } else {
+            document.getElementById("myScore").value = game.score.toString();
+        }
+    }
+
     //Error sound on when player making mistakes
     function playErrTone() {
         errNode.gain.linearRampToValueAtTime(vol, audioCtx.currentTime + ramp);
@@ -64,11 +73,7 @@ $(document).ready(function () {
     //Error sound off when pad is released
     function stopErrTone() {
         errNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + ramp);
-        if (game.score < 10) {
-            document.getElementById("myScore").value = "0" + game.score.toString();
-        } else {
-            document.getElementById("myScore").value = game.score.toString();
-        }
+        displayScore();
     }
 
     //Play the generated seqence 
@@ -183,11 +188,7 @@ $(document).ready(function () {
           document.getElementById("myScore").value = "01";
         }
         game.score += 1;
-        if (game.score < 10) {
-          document.getElementById("myScore").value = "0" + game.score.toString();
-        } else {
-          document.getElementById("myScore").value = game.score.toString();
-        } 
+        displayScore();
     }
   
     //Player's turn mousedown event
