@@ -18,4 +18,4 @@ User Story: I can play in strict mode where if I get a button press wrong, it no
 
 User Story: I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
 
-View Demo on Codepen: http://codepen.io/lliu05/full/LkBPvr/
+View Demo on Heroku: https://luna-simons-game.herokuapp.com/
